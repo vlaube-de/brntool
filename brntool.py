@@ -23,7 +23,7 @@ def memreadblock(ser,addr,size):
 	ser.write('r')
 	while not (ser.read(1)=='0' and ser.read(1)=='x'):
 		pass
-	ser.write(hex(addr)[2:])
+	ser.write(hex(addr)[2:-1])
 	ser.write('\r')
 	while not (ser.read(1)=='.' and ser.read(1)=='.' and ser.read(1)=='.'):
 		pass
